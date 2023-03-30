@@ -6,12 +6,14 @@ import { styles } from "./style";
 
 export function Home() {
     const [participants, setParticipants] = useState(['Jorge']);
+    const [participantName, setParticipantName] = useState('');
 
     function handleParticipantAdd() {
-        if (participants.includes("Jorge")) {
+        if (participants.includes(participantName)) {
             return Alert.alert("Participante existe", "Já existe um participante na lista com esse nome.");
         }
-        setParticipants(prevState => [...prevState, 'Ana']);
+        setParticipants(prevState => [...prevState, participantName]);
+        setParticipantName('');
     }
 
     function handleParticipantRemove(name: string) {
@@ -42,6 +44,8 @@ export function Home() {
                     style={styles.input}
                     placeholder="Nome do participante"
                     placeholderTextColor="#6B6B6B"
+                    onChangeText={setParticipantName}
+                    value={participantName}
                 />
 
                 <TouchableOpacity style={styles.button} onPress={handleParticipantAdd}>
