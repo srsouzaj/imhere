@@ -4,16 +4,17 @@ import { styles } from "./style";
 
 interface ParticipantInterface {
     name: string
+    onRemove: () => void;
 }
 
-export function Participant({ name }: ParticipantInterface) {
+export function Participant({ name, onRemove }: ParticipantInterface) {
     return (
         <View style={styles.container}>
             <Text style={styles.name}>
                 {name}
             </Text>
 
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={onRemove}>
                 <Text style={styles.buttonText}>
                     -
                 </Text>
