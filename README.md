@@ -29,7 +29,7 @@ Segue os comandos para baixar e executar o projeto na sua máquina:
 
 ```bash
 ## Clone o projeto em sua máquina
-git clone [https://github.com/srsouzaj/](https://github.com/srsouzaj/nlwsetup)imhere.git
+git clone https://github.com/srsouzaj/imhere.git
 
 # Acessar o projeto no terminal
 $ cd imhere
